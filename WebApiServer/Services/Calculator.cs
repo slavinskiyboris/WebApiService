@@ -1,5 +1,6 @@
 ﻿using System.Globalization;
 using System.Text.RegularExpressions;
+using CommonLibrary;
 
 namespace WebApiServer.Services
 {
@@ -9,7 +10,7 @@ namespace WebApiServer.Services
         {
             expression = expression.Replace(",", "."); // Замена запятых на точки
 
-            if (!IsValidExpression(expression))
+            if (!ExpressionValidator.IsValidExpression(expression))
             {
                 throw new ArgumentException("Invalid expression format.");
             }
@@ -78,31 +79,6 @@ namespace WebApiServer.Services
             {
                 throw new ArgumentException("Invalid expression format.");
             }
-        }
-
-        public static bool IsValidExpression(string expression)
-        {
-            expression = expression.Replace(",", ".");
-
-            int balance = 0;
-            foreach (char c in expression)
-            {
-                if (c == '(')
-                {
-                    balance++;
-                }
-                else if (c == ')')
-                {
-                    balance--;
-                }
-
-                if (balance < 0)
-                {
-                    return false; // closing bracket without matching opening bracket
-                }
-            }
-
-            return balance == 0; // all opening brackets must be closed
         }
 
         private static int Precedence(string op)

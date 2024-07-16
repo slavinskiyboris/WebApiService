@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using WebApiServer.Services;
+using CommonLibrary;
 
 namespace WebApiServer.Controllers
 {
@@ -25,7 +26,7 @@ namespace WebApiServer.Controllers
 
             _logger.LogInformation($"Received expression: {exp}");
 
-            if (!Calculator.IsValidExpression(exp))
+            if (!ExpressionValidator.IsValidExpression(exp))
             {
                 _logger.LogWarning("Invalid expression format.");
                 return BadRequest("Invalid expression format.");

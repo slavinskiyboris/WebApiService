@@ -1713,9 +1713,22 @@
           "build/netcoreapp3.1/xunit.runner.visualstudio.props": {}
         }
       },
+      "CommonLibrary/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/CommonLibrary.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CommonLibrary.dll": {}
+        }
+      },
       "WebApiServer/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "CommonLibrary": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/WebApiServer.dll": {}
         },
@@ -5520,6 +5533,11 @@
         "xunit.runner.visualstudio.nuspec"
       ]
     },
+    "CommonLibrary/1.0.0": {
+      "type": "project",
+      "path": "../CommonLibrary/CommonLibrary.csproj",
+      "msbuildProject": "../CommonLibrary/CommonLibrary.csproj"
+    },
     "WebApiServer/1.0.0": {
       "type": "project",
       "path": "../WebApiServer/WebApiServer.csproj",
@@ -5542,11 +5560,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Boris\\source\\repos\\WebApiService\\WebApiTests\\WebApiTests.csproj",
+      "projectUniqueName": "C:\\Users\\Boris\\Desktop\\dev\\WebApiService\\WebApiTests\\WebApiTests.csproj",
       "projectName": "WebApiTests",
-      "projectPath": "C:\\Users\\Boris\\source\\repos\\WebApiService\\WebApiTests\\WebApiTests.csproj",
+      "projectPath": "C:\\Users\\Boris\\Desktop\\dev\\WebApiService\\WebApiTests\\WebApiTests.csproj",
       "packagesPath": "C:\\Users\\Boris\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Boris\\source\\repos\\WebApiService\\WebApiTests\\obj\\",
+      "outputPath": "C:\\Users\\Boris\\Desktop\\dev\\WebApiService\\WebApiTests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -5567,8 +5585,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\Boris\\source\\repos\\WebApiService\\WebApiServer\\WebApiServer.csproj": {
-              "projectPath": "C:\\Users\\Boris\\source\\repos\\WebApiService\\WebApiServer\\WebApiServer.csproj"
+            "C:\\Users\\Boris\\Desktop\\dev\\WebApiService\\WebApiServer\\WebApiServer.csproj": {
+              "projectPath": "C:\\Users\\Boris\\Desktop\\dev\\WebApiService\\WebApiServer\\WebApiServer.csproj"
             }
           }
         }

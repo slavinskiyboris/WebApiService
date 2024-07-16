@@ -1,4 +1,5 @@
 ﻿// See https://aka.ms/new-console-template for more information
+using CommonLibrary;
 using HttpClient client = new HttpClient();
 
 while (true)
@@ -12,7 +13,7 @@ while (true)
         continue;
     }
 
-    if (!IsValidExpression(exp))
+    if (!ExpressionValidator.IsValidExpression(exp))
     {
         Console.WriteLine("Invalid expression format.");
         continue;
@@ -30,27 +31,4 @@ while (true)
         string error = await response.Content.ReadAsStringAsync();
         Console.WriteLine($"Error message: {error}");
     }
-}
-
-static bool IsValidExpression(string expression)
-{
-    int balance = 0;
-    foreach (char c in expression)
-    {
-        if (c == '(')
-        {
-            balance++;
-        }
-        else if (c == ')')
-        {
-            balance--;
-        }
-
-        if (balance < 0)
-        {
-            return false;
-        }
-    }
-
-    return balance == 0;
 }

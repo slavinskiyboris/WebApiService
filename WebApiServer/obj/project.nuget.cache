@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "7S1S1CKHgl+seGEX+XHL7cIBOLWq0bfY03T8S/FTCz3I1byVNOE2M2czmzTvA/SOSVTjZGDR1PPqm1yj2eIm4g==",
+  "dgSpecHash": "DfNWLj7hn3QsZACxIvb7n4U6234BF1N06K2z/BoVDu4iE7JRIkQcb6mxh7nJcaBRK7e4q87ks0GbkXvG0/xbJQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Boris\\source\\repos\\WebApiService\\WebApiServer\\WebApiServer.csproj",
+  "projectFilePath": "C:\\Users\\Boris\\Desktop\\dev\\WebApiService\\WebApiServer\\WebApiServer.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
